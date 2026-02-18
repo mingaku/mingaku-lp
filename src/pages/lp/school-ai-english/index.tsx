@@ -8,6 +8,31 @@ import img005 from "./assets/005.png";
 import img006 from "./assets/006.png";
 import img100 from "./assets/100.png";
 
+const svgProps = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, width: 20, height: 20 };
+
+/* Reusable SVG inline icons */
+const Icon = {
+  User: () => <svg {...svgProps}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
+  Handshake: () => <svg {...svgProps}><path d="M11 17a1 1 0 0 1-1 1H6l-4 2V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10z" /><path d="M14 9h4a2 2 0 0 1 2 2v10l-4-2h-2" /><path d="M9 12h.01M15 12h.01" /></svg>,
+  BarChart: () => <svg {...svgProps}><path d="M3 3v18h18" /><rect x="7" y="10" width="3" height="8" rx="1" /><rect x="14" y="5" width="3" height="13" rx="1" /></svg>,
+  Eye: () => <svg {...svgProps}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>,
+  GraduationCap: () => <svg {...svgProps}><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" /></svg>,
+  Heart: () => <svg {...svgProps}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>,
+  Rocket: () => <svg {...svgProps}><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg>,
+  Zap: () => <svg {...svgProps}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>,
+  Shield: () => <svg {...svgProps}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+  TrendingUp: () => <svg {...svgProps}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>,
+  Clipboard: () => <svg {...svgProps}><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" ry="1" /></svg>,
+  Users: () => <svg {...svgProps}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>,
+  PlusCircle: () => <svg {...svgProps}><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>,
+  Globe: () => <svg {...svgProps}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
+  HeartHandshake: () => <svg {...svgProps}><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" /><path d="m18 15-2-2" /><path d="m15 18-2-2" /></svg>,
+  Type: () => <svg {...svgProps}><polyline points="4 7 4 4 20 4 20 7" /><line x1="9" y1="20" x2="15" y2="20" /><line x1="12" y1="4" x2="12" y2="20" /></svg>,
+  Family: () => <svg {...svgProps}><circle cx="6" cy="5" r="2.5" /><path d="M3 13v-1a3 3 0 0 1 6 0v1" /><circle cx="18" cy="5" r="2.5" /><path d="M15 13v-1a3 3 0 0 1 6 0v1" /><circle cx="12" cy="11" r="2.5" /><path d="M9 21v-2a3 3 0 0 1 6 0v2" /></svg>,
+  Monitor: () => <svg {...svgProps}><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
+  Wrench: () => <svg {...svgProps}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>,
+};
+
 function SchoolAiEnglish() {
   useEffect(() => {
     document.title = "みんがく | N-E.X.T. ハイスクール構想";
@@ -39,7 +64,6 @@ function SchoolAiEnglish() {
           <div className="hero-bg" aria-hidden="true" />
           <div className="container hero-grid">
             <div className="hero-copy">
-              {/* <div className="pill">令和7年度補正予算対応</div> */}
               <h1>
                 地域を支えるDX
                 <br />
@@ -116,7 +140,7 @@ function SchoolAiEnglish() {
                   <div className="orbit-dot orbit-dot-2" />
                   <div className="orbit-dot orbit-dot-3" />
                   {/* Connection SVG with animated arrows */}
-                  <svg className="diagram-connections" viewBox="0 0 340 300">
+                  <svg className="diagram-connections" viewBox="0 0 340 320">
                     <defs>
                       <linearGradient
                         id="lineGrad1"
@@ -157,7 +181,7 @@ function SchoolAiEnglish() {
                     </defs>
                     {/* 自治体 → 学校 */}
                     <path
-                      d="M150 72 Q80 140 82 210"
+                      d="M170 70 Q100 140 65 220"
                       stroke="url(#lineGrad1)"
                       strokeWidth="1.5"
                       fill="none"
@@ -166,7 +190,7 @@ function SchoolAiEnglish() {
                     />
                     {/* 学校 → 地元企業 */}
                     <path
-                      d="M100 230 Q170 260 240 230"
+                      d="M75 235 Q170 275 265 235"
                       stroke="url(#lineGrad1)"
                       strokeWidth="1.5"
                       fill="none"
@@ -175,7 +199,7 @@ function SchoolAiEnglish() {
                     />
                     {/* 地元企業 → 自治体 */}
                     <path
-                      d="M258 210 Q260 140 190 72"
+                      d="M275 220 Q240 140 170 70"
                       stroke="url(#lineGrad2)"
                       strokeWidth="1.5"
                       fill="none"
@@ -183,10 +207,6 @@ function SchoolAiEnglish() {
                       className="connection-line line-delay-2"
                     />
                   </svg>
-                  {/* Edge labels */}
-                  <span className="edge-label edge-label-left"></span>
-                  <span className="edge-label edge-label-bottom"></span>
-                  <span className="edge-label edge-label-right"></span>
                   {/* Center hub */}
                   <div className="diagram-center">
                     <span className="diagram-center-ring" aria-hidden="true" />
@@ -417,7 +437,7 @@ function SchoolAiEnglish() {
               <div className="type-detail-left">
                 <div className="type-purpose-card">
                   <div className="type-purpose-header">
-                    <span className="type-purpose-icon blue">◎</span>
+                    <span className="type-purpose-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
                     <span className="type-purpose-label">本類型の目的</span>
                   </div>
                   <p className="type-purpose-text">
@@ -429,7 +449,7 @@ function SchoolAiEnglish() {
                 <div className="type-measures">
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">👤</span>
+                      <span className="measure-icon blue"><Icon.User /></span>
                       <span className="measure-label">施策 01</span>
                     </div>
                     <h3>地元企業監修「バーチャル熟練工・専門家アプリ」</h3>
@@ -439,7 +459,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">👤</span>
+                      <span className="measure-icon blue"><Icon.User /></span>
                       <span className="measure-label">施策 02</span>
                     </div>
                     <h3>企業の「匠の技」を継承する個別最適トレーニング</h3>
@@ -449,7 +469,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">🤝</span>
+                      <span className="measure-icon blue"><Icon.Handshake /></span>
                       <span className="measure-label">施策 03</span>
                     </div>
                     <h3>キャリア意識の醸成と地域愛着の向上</h3>
@@ -462,13 +482,13 @@ function SchoolAiEnglish() {
               <div className="type-detail-right">
                 <div className="data-driven-card">
                   <div className="data-driven-header">
-                    <span className="data-driven-icon">📊</span>
+                    <span className="data-driven-icon"><Icon.BarChart /></span>
                     <h3>Data Driven</h3>
                     <p>成果の可視化</p>
                   </div>
                   <div className="data-driven-divider" />
                   <div className="data-driven-item">
-                    <span className="data-driven-item-icon">👁</span>
+                    <span className="data-driven-item-icon"><Icon.Eye /></span>
                     <div>
                       <h4>ログ分析による意欲の把握</h4>
                       <p>
@@ -476,7 +496,7 @@ function SchoolAiEnglish() {
                       </p>
                     </div>
                   </div>
-                  <div className="data-driven-arrow">↓</div>
+                  <div className="data-driven-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg></div>
                   <div className="data-driven-bottom">
                     <h4>的確な進路指導へ</h4>
                     <p>
@@ -505,13 +525,13 @@ function SchoolAiEnglish() {
                 <div className="type-measures">
                   <div className="type-measure-item has-border">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">👤</span>
+                      <span className="measure-icon blue"><Icon.User /></span>
                       <span className="measure-label">施策01</span>
                     </div>
                     <h3>バーチャル熟練工・専門家アプリの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
-                        <span className="check-icon">✓</span>
+                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
                         <div>
                           <strong>専門知のデジタル化</strong>
                           <p>
@@ -520,7 +540,7 @@ function SchoolAiEnglish() {
                         </div>
                       </div>
                       <div className="measure-check">
-                        <span className="check-icon">✓</span>
+                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
                         <div>
                           <strong>実務シミュレーション＆PBL</strong>
                           <p>
@@ -532,13 +552,13 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item has-border">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">🎓</span>
+                      <span className="measure-icon blue"><Icon.GraduationCap /></span>
                       <span className="measure-label">施策02</span>
                     </div>
                     <h3>匠の技を継承する個別最適トレーニング</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
-                        <span className="check-icon">✓</span>
+                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
                         <div>
                           <strong>24時間体制の専門指導</strong>
                           <p>
@@ -547,7 +567,7 @@ function SchoolAiEnglish() {
                         </div>
                       </div>
                       <div className="measure-check">
-                        <span className="check-icon">✓</span>
+                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
                         <div>
                           <strong>高度なフィードバック</strong>
                           <p>
@@ -559,13 +579,13 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item has-border">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">❤️</span>
+                      <span className="measure-icon blue"><Icon.Heart /></span>
                       <span className="measure-label">施策03</span>
                     </div>
                     <h3>キャリア意識の醸成と地域愛着</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
-                        <span className="check-icon">✓</span>
+                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
                         <div>
                           <strong>「地元のプロ」との継続的対話</strong>
                           <p>
@@ -580,12 +600,12 @@ function SchoolAiEnglish() {
               <div className="type-detail-right">
                 <div className="strengths-card">
                   <div className="strengths-header">
-                    <span className="strengths-icon">🚀</span>
+                    <span className="strengths-icon"><Icon.Rocket /></span>
                     <h3>実装に向けた強み</h3>
                   </div>
                   <div className="strengths-divider" />
                   <div className="strengths-item">
-                    <span className="strengths-item-icon yellow">⚡</span>
+                    <span className="strengths-item-icon yellow"><Icon.Zap /></span>
                     <div>
                       <h4>ノーコードで迅速開発</h4>
                       <p>
@@ -594,7 +614,7 @@ function SchoolAiEnglish() {
                     </div>
                   </div>
                   <div className="strengths-item">
-                    <span className="strengths-item-icon blue">🛡</span>
+                    <span className="strengths-item-icon blue"><Icon.Shield /></span>
                     <div>
                       <h4>安全な共有環境</h4>
                       <p>
@@ -604,7 +624,7 @@ function SchoolAiEnglish() {
                     </div>
                   </div>
                   <div className="strengths-item">
-                    <span className="strengths-item-icon cyan">📈</span>
+                    <span className="strengths-item-icon cyan"><Icon.TrendingUp /></span>
                     <div>
                       <h4>確かな共同研究実績</h4>
                       <p>
@@ -636,7 +656,7 @@ function SchoolAiEnglish() {
               <div className="type-detail-left">
                 <div className="type-purpose-card purple">
                   <div className="type-purpose-header">
-                    <span className="type-purpose-icon purple">◎</span>
+                    <span className="type-purpose-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
                     <span className="type-purpose-label">本類型の目的</span>
                   </div>
                   <p className="type-purpose-text">
@@ -648,7 +668,7 @@ function SchoolAiEnglish() {
                 <div className="type-measures">
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon cyan">📋</span>
+                      <span className="measure-icon cyan"><Icon.Clipboard /></span>
                       <span className="measure-label">施策 01</span>
                     </div>
                     <h3>専門高校向けテンプレートで即実践</h3>
@@ -658,7 +678,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon purple">👥</span>
+                      <span className="measure-icon purple"><Icon.Users /></span>
                       <span className="measure-label">施策 02</span>
                     </div>
                     <h3>専門家ネットワークとの連携</h3>
@@ -668,7 +688,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon gray">➕</span>
+                      <span className="measure-icon gray"><Icon.PlusCircle /></span>
                       <span className="measure-label">施策 03</span>
                     </div>
                     <h3>「自律的・探究的」な研究活動の実現</h3>
@@ -681,7 +701,7 @@ function SchoolAiEnglish() {
               <div className="type-detail-right">
                 <div className="visualization-card">
                   <div className="visualization-header">
-                    <span className="visualization-icon">📊</span>
+                    <span className="visualization-icon"><Icon.BarChart /></span>
                     <div>
                       <h3>Visualization</h3>
                       <p>思考の可視化と接続</p>
@@ -689,7 +709,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="visualization-divider" />
                   <div className="visualization-item">
-                    <span className="visualization-item-icon">🌐</span>
+                    <span className="visualization-item-icon"><Icon.Globe /></span>
                     <div>
                       <h4>思考プロセスの客観把握</h4>
                       <p>
@@ -697,7 +717,7 @@ function SchoolAiEnglish() {
                       </p>
                     </div>
                   </div>
-                  <div className="visualization-arrow">↓</div>
+                  <div className="visualization-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg></div>
                   <div className="visualization-bottom">
                     <h4>大学教育（高等教育）への接続</h4>
                     <p>
@@ -723,7 +743,7 @@ function SchoolAiEnglish() {
               <div className="type-detail-left">
                 <div className="type-purpose-card green">
                   <div className="type-purpose-header">
-                    <span className="type-purpose-icon green">◎</span>
+                    <span className="type-purpose-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
                     <span className="type-purpose-label">本類型の目的</span>
                   </div>
                   <p className="type-purpose-text">
@@ -735,7 +755,7 @@ function SchoolAiEnglish() {
                 <div className="type-measures">
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">💙</span>
+                      <span className="measure-icon blue"><Icon.HeartHandshake /></span>
                       <span className="measure-label">施策 01</span>
                     </div>
                     <h3>24時間「個」に寄り添う学習パートナー</h3>
@@ -745,7 +765,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">🔤</span>
+                      <span className="measure-icon blue"><Icon.Type /></span>
                       <span className="measure-label">施策 02</span>
                     </div>
                     <h3>多様な習熟度・言語背景への対応</h3>
@@ -755,7 +775,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue">👪</span>
+                      <span className="measure-icon blue"><Icon.Family /></span>
                       <span className="measure-label">施策 03</span>
                     </div>
                     <h3>保護者・家庭との連携サポート</h3>
@@ -768,7 +788,7 @@ function SchoolAiEnglish() {
               <div className="type-detail-right">
                 <div className="monitoring-card">
                   <div className="monitoring-header">
-                    <span className="monitoring-icon">🛡</span>
+                    <span className="monitoring-icon"><Icon.Shield /></span>
                     <div>
                       <h3>Monitoring &amp; Care</h3>
                       <p>見守りの強化</p>
@@ -776,7 +796,7 @@ function SchoolAiEnglish() {
                   </div>
                   <div className="monitoring-divider" />
                   <div className="monitoring-item">
-                    <span className="monitoring-item-icon">👤</span>
+                    <span className="monitoring-item-icon"><Icon.Eye /></span>
                     <div>
                       <h4>会話ログによる予兆検知</h4>
                       <p>
@@ -784,7 +804,7 @@ function SchoolAiEnglish() {
                       </p>
                     </div>
                   </div>
-                  <div className="monitoring-arrow">↓</div>
+                  <div className="monitoring-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg></div>
                   <div className="monitoring-bottom">
                     <h4>プロセス評価の高度化</h4>
                     <p>
@@ -824,7 +844,7 @@ function SchoolAiEnglish() {
             <div className="framework-grid">
               <div className="framework-card">
                 <div className="framework-card-top blue" />
-                <div className="framework-card-icon">🎓</div>
+                <div className="framework-card-icon"><Icon.GraduationCap /></div>
                 <p className="framework-level">HIGH LEVEL</p>
                 <h3>1. 認定ティーチャー</h3>
                 <div className="framework-role">
@@ -847,7 +867,7 @@ function SchoolAiEnglish() {
               </div>
               <div className="framework-card">
                 <div className="framework-card-top green" />
-                <div className="framework-card-icon">🖥</div>
+                <div className="framework-card-icon"><Icon.Monitor /></div>
                 <p className="framework-level">MID LEVEL</p>
                 <h3>2. 認定アドバイザー</h3>
                 <div className="framework-role">
@@ -870,7 +890,7 @@ function SchoolAiEnglish() {
               </div>
               <div className="framework-card">
                 <div className="framework-card-top gray" />
-                <div className="framework-card-icon">🔧</div>
+                <div className="framework-card-icon"><Icon.Wrench /></div>
                 <p className="framework-level">BASE LEVEL</p>
                 <h3>3. AI-ICT支援員</h3>
                 <div className="framework-role">
