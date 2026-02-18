@@ -474,9 +474,9 @@
 /* Center hub */
 .diagram-center {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 100px;
   height: 100px;
   background: linear-gradient(145deg, #2FA4A9 0%, #1d8f94 60%, #17747a 100%);
@@ -491,6 +491,37 @@
     0 12px 28px rgba(0, 0, 0, 0.3);
   animation: center-glow 4s ease-in-out infinite;
   z-index: 2;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s ease;
+}
+
+.diagram-center:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: linear-gradient(145deg, #38c5ca 0%, #2FA4A9 50%, #1d8f94 100%);
+  animation: none;
+  box-shadow:
+    0 0 50px rgba(47, 164, 169, 0.5),
+    0 0 100px rgba(103, 232, 249, 0.25),
+    inset 0 0 20px rgba(103, 232, 249, 0.1),
+    0 14px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Soft glow burst on hover (no extra lines/rings) */
+.diagram-center::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.22) 0%, rgba(47, 164, 169, 0.08) 50%, transparent 72%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.diagram-center:hover::before {
+  opacity: 1;
+  transform: scale(1.8);
 }
 
 .diagram-center-ring {
@@ -499,6 +530,13 @@
   border-radius: 50%;
   border: 1.5px solid rgba(103, 232, 249, 0.2);
   animation: ring-spin 12s linear infinite;
+  transition: border-color 0.4s ease, inset 0.4s ease;
+}
+
+.diagram-center:hover .diagram-center-ring {
+  border-color: rgba(103, 232, 249, 0.5);
+  inset: -10px;
+  animation-duration: 3s;
 }
 
 .diagram-center-ring::before {
@@ -511,6 +549,14 @@
   background: #67e8f9;
   border-radius: 50%;
   box-shadow: 0 0 6px rgba(103, 232, 249, 0.6);
+  transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diagram-center:hover .diagram-center-ring::before {
+  width: 6px;
+  height: 6px;
+  background: #a5f3fc;
+  box-shadow: 0 0 14px rgba(103, 232, 249, 1), 0 0 28px rgba(103, 232, 249, 0.5);
 }
 
 @keyframes ring-spin {
@@ -524,6 +570,12 @@
   color: #ffffff;
   line-height: 1.2;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: text-shadow 0.3s ease, letter-spacing 0.4s ease;
+}
+
+.diagram-center:hover .diagram-center-label {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 1px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.06em;
 }
 
 .diagram-center-sub {
@@ -531,6 +583,11 @@
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.diagram-center:hover .diagram-center-sub {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 @keyframes center-glow {

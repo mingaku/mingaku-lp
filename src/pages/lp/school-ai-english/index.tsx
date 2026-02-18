@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./style.css";
 import img001 from "./assets/001.png";
 import img002 from "./assets/002.png";
@@ -8,6 +9,10 @@ import img006 from "./assets/006.png";
 import img100 from "./assets/100.png";
 
 function SchoolAiEnglish() {
+  useEffect(() => {
+    document.title = "みんがく | N-E.X.T. ハイスクール構想";
+  }, []);
+
   return (
     <div className="lp">
       <header className="lp-header">
@@ -34,7 +39,7 @@ function SchoolAiEnglish() {
           <div className="hero-bg" aria-hidden="true" />
           <div className="container hero-grid">
             <div className="hero-copy">
-              <div className="pill">令和7年度補正予算対応</div>
+              {/* <div className="pill">令和7年度補正予算対応</div> */}
               <h1>
                 地域を支えるDX
                 <br />
@@ -157,7 +162,6 @@ function SchoolAiEnglish() {
                       strokeWidth="1.5"
                       fill="none"
                       strokeDasharray="6 4"
-
                       className="connection-line"
                     />
                     {/* 学校 → 地元企業 */}
@@ -167,7 +171,6 @@ function SchoolAiEnglish() {
                       strokeWidth="1.5"
                       fill="none"
                       strokeDasharray="6 4"
-
                       className="connection-line line-delay-1"
                     />
                     {/* 地元企業 → 自治体 */}
@@ -177,7 +180,6 @@ function SchoolAiEnglish() {
                       strokeWidth="1.5"
                       fill="none"
                       strokeDasharray="6 4"
-
                       className="connection-line line-delay-2"
                     />
                   </svg>
