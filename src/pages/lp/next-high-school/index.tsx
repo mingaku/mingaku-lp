@@ -6,7 +6,7 @@ import img003 from "./assets/003.png";
 import img004 from "./assets/004.png";
 import img005 from "./assets/005.png";
 import img006 from "./assets/006.png";
-import img100 from "./assets/100.png";
+
 
 const svgProps = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, width: 20, height: 20 };
 
@@ -33,7 +33,7 @@ const Icon = {
   Wrench: () => <svg {...svgProps}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>,
 };
 
-function SchoolAiEnglish() {
+function NextHighSchool() {
   useEffect(() => {
     document.title = "みんがく | N-E.X.T. ハイスクール構想";
   }, []);
@@ -50,7 +50,7 @@ function SchoolAiEnglish() {
             <a href="#problem">課題</a>
             <a href="#model">地域共創</a>
             <a href="#support-framework">支援内容</a>
-            <a href="#trust">実績</a>
+
             <a className="cta-button primary" href="#contact">
               無料相談
             </a>
@@ -1053,25 +1053,7 @@ function SchoolAiEnglish() {
           </div>
         </section>
 
-        {/* ===== 導入実績と信頼（新デザイン） ===== */}
-        <section className="section trust-new" id="trust">
-          <div className="container">
-            <h2 className="type-detail-title">
-              <span className="type-detail-border" />
-              導入実績と信頼
-            </h2>
-            <div className="trust-new-image">
-              <img
-                src={img100}
-                alt="導入実績と信頼 - 日本e-learning大賞受賞、導入校数1,000校、アクティブユーザー数12万人超"
-                className="trust-image"
-              />
-            </div>
-            <p className="trust-footer-text">
-              認定ティーチャー（プロンプトエキスパート）のエコシステムによる持続可能な運用。
-            </p>
-          </div>
-        </section>
+
 
         {/* ===== CTAセクション ===== */}
         <section className="section cta" id="contact">
@@ -1113,4 +1095,4 @@ function SchoolAiEnglish() {
   );
 }
 
-export default SchoolAiEnglish;
+export default NextHighSchool;

@@ -2020,77 +2020,7 @@
   border-color: rgba(47, 164, 169, 0.2);
 }
 
-/* ===== Trust New (導入実績と信頼) ===== */
-.trust-new {
-  background: linear-gradient(168deg, var(--color-bg) 0%, #eaf1f8 40%, #e4edf6 70%, var(--color-bg) 100%);
-  color: var(--color-text);
-  padding: 80px 0;
-  position: relative;
-  overflow: hidden;
-}
 
-.trust-new::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 12% 15%, rgba(47, 164, 169, 0.06), transparent 50%),
-    radial-gradient(ellipse 50% 60% at 82% 92%, rgba(47, 164, 169, 0.04), transparent 40%);
-  pointer-events: none;
-}
-
-.trust-new::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 128px 128px;
-  mix-blend-mode: multiply;
-}
-
-.trust-new .container {
-  position: relative;
-  z-index: 1;
-}
-
-.trust-new .type-detail-title {
-  color: var(--color-primary);
-}
-
-.trust-new .type-detail-border {
-  background: linear-gradient(180deg, var(--color-secondary), #1d8f94);
-}
-
-.trust-new-image {
-  position: relative;
-  z-index: 1;
-  margin-top: 40px;
-  text-align: center;
-  background: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  border: 1px solid var(--color-border);
-  box-shadow:
-    0 4px 12px rgba(11, 45, 79, 0.06),
-    0 20px 50px rgba(11, 45, 79, 0.08);
-}
-
-.trust-image {
-  width: 100%;
-  max-width: 960px;
-  height: auto;
-  margin: 0 auto;
-  border-radius: var(--radius-md);
-}
-
-.trust-footer-text {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 0.95rem;
-  color: var(--color-muted);
-}
 
 /* ===== CTA ===== */
 .cta {
@@ -2212,7 +2142,7 @@
   .safety-grid,
   .cta-inner,
   .type-detail-grid,
-  .trust-new-grid,
+
   .framework-grid {
     grid-template-columns: 1fr;
   }
@@ -2387,20 +2317,7 @@
     gap: 12px;
   }
 
-  /* Trust */
-  .trust-new {
-    padding: 56px 0;
-  }
 
-  .trust-new-image {
-    margin-top: 24px;
-    padding: 16px;
-  }
-
-  .trust-footer-text {
-    margin-top: 24px;
-    font-size: 0.88rem;
-  }
 
   /* CTA */
   .cta-title-compact {

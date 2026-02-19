@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import SchoolAiEnglish from './pages/lp/school-ai-english'
+import NextHighSchool from './pages/lp/next-high-school'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/lp/next-high-school" element={<SchoolAiEnglish />} />
+        <Route path="/lp/next-high-school" element={<NextHighSchool />} />
         <Route path="*" element={<Navigate to="/lp/next-high-school" replace />} />
       </Routes>
     </BrowserRouter>
