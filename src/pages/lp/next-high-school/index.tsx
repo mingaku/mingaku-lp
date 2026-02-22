@@ -6,6 +6,7 @@ import img003 from "./assets/003.png";
 import img004 from "./assets/004.png";
 import img005 from "./assets/005.png";
 import img006 from "./assets/006.png";
+import heroImg from "./assets/hero.jpeg";
 
 
 const svgProps = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, width: 20, height: 20 };
@@ -51,9 +52,10 @@ function NextHighSchool() {
             <a href="#model">地域共創</a>
             <a href="#support-framework">支援内容</a>
 
-            <a className="cta-button primary" href="#contact">
+            <a className="cta-button primary" href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
               無料相談
             </a>
+            {/* リンク修正 */}
           </nav>
         </div>
       </header>
@@ -62,6 +64,7 @@ function NextHighSchool() {
         {/* ===== ヒーローセクション ===== */}
         <section className="hero" id="top">
           <div className="hero-bg" aria-hidden="true" />
+
           <div className="container hero-grid">
             <div className="hero-copy">
               <h1>
@@ -78,206 +81,32 @@ function NextHighSchool() {
                 自治体の教育DXを、不可逆な定着と地域活性化へつなげます。
               </p>
               <p className="tagline">導入で終わらせない、定着まで伴走。</p>
+              {/* 修正3 */}
               <div className="hero-actions">
-                <a className="cta-button primary" href="#contact">
-                  無料相談を申し込む
+                <a className="cta-button primary" href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
+                  無料相談・資料請求
                 </a>
-                <a className="cta-button ghost" href="#materials">
-                  資料請求
-                </a>
+                {/* リンク修正 */}
               </div>
               <div className="hero-meta">
+                {/* 修正4 */}
                 <div className="meta-card">
-                  <p className="meta-label">国の指針との整合</p>
-                  <p className="meta-value">N-E.X.T.ハイスクール構想対応</p>
+                  <p className="meta-label">1類</p>
+                  <p className="meta-value">地域産業と連携する実務学習</p>
                 </div>
                 <div className="meta-card">
-                  <p className="meta-label">財源</p>
-                  <p className="meta-value">高等学校教育改革促進基金</p>
+                  <p className="meta-label">2類</p>
+                  <p className="meta-value">問いを立て思考を深める理数探求</p>
                 </div>
                 <div className="meta-card">
-                  <p className="meta-label">対象</p>
-                  <p className="meta-value">教育委員会・高校・地元企業</p>
+                  <p className="meta-label">類型3</p>
+                  <p className="meta-value">誰一人取り残さない学習保障</p>
                 </div>
               </div>
             </div>
             <div className="hero-visual">
-              <div className="diagram-card">
-                <div className="diagram-card-glow" aria-hidden="true" />
-                <div className="diagram-header">
-                  <p className="diagram-kicker">地域共創モデル</p>
-                  <h3>スキル自給自足エコシステム</h3>
-                </div>
-                <div
-                  className="diagram"
-                  role="img"
-                  aria-label="自治体・学校・企業の循環モデル"
-                >
-                  {/* Background grid pattern */}
-                  <svg className="diagram-grid-bg" aria-hidden="true">
-                    <defs>
-                      <pattern
-                        id="dotGrid"
-                        width="20"
-                        height="20"
-                        patternUnits="userSpaceOnUse"
-                      >
-                        <circle
-                          cx="1"
-                          cy="1"
-                          r="0.6"
-                          fill="rgba(47,164,169,0.12)"
-                        />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#dotGrid)" />
-                  </svg>
-                  {/* Orbit rings */}
-                  <div className="orbit-ring" />
-                  <div className="orbit-ring orbit-ring-inner" />
-                  {/* Orbiting particles */}
-                  <div className="orbit-dot orbit-dot-1" />
-                  <div className="orbit-dot orbit-dot-2" />
-                  <div className="orbit-dot orbit-dot-3" />
-                  {/* Connection SVG with animated arrows */}
-                  <svg className="diagram-connections" viewBox="0 0 340 320">
-                    <defs>
-                      <linearGradient
-                        id="lineGrad1"
-                        x1="0"
-                        y1="0"
-                        x2="1"
-                        y2="1"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#2FA4A9"
-                          stopOpacity="0.7"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#67e8f9"
-                          stopOpacity="0.4"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="lineGrad2"
-                        x1="1"
-                        y1="0"
-                        x2="0"
-                        y2="1"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#67e8f9"
-                          stopOpacity="0.4"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#2FA4A9"
-                          stopOpacity="0.7"
-                        />
-                      </linearGradient>
-                    </defs>
-                    {/* 自治体 → 学校 */}
-                    <path
-                      d="M170 70 Q100 140 65 220"
-                      stroke="url(#lineGrad1)"
-                      strokeWidth="1.5"
-                      fill="none"
-                      strokeDasharray="6 4"
-                      className="connection-line"
-                    />
-                    {/* 学校 → 地元企業 */}
-                    <path
-                      d="M75 235 Q170 275 265 235"
-                      stroke="url(#lineGrad1)"
-                      strokeWidth="1.5"
-                      fill="none"
-                      strokeDasharray="6 4"
-                      className="connection-line line-delay-1"
-                    />
-                    {/* 地元企業 → 自治体 */}
-                    <path
-                      d="M275 220 Q240 140 170 70"
-                      stroke="url(#lineGrad2)"
-                      strokeWidth="1.5"
-                      fill="none"
-                      strokeDasharray="6 4"
-                      className="connection-line line-delay-2"
-                    />
-                  </svg>
-                  {/* Center hub */}
-                  <div className="diagram-center">
-                    <span className="diagram-center-ring" aria-hidden="true" />
-                    <span className="diagram-center-label">DX人材</span>
-                    <span className="diagram-center-sub">育成循環</span>
-                  </div>
-                  {/* Nodes */}
-                  <div className="diagram-node node-top">
-                    <span className="node-icon">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        width="26"
-                        height="26"
-                      >
-                        <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
-                        <path d="M9 9h1M14 9h1M9 13h1M14 13h1" />
-                      </svg>
-                    </span>
-                    <span className="node-label">自治体</span>
-                  </div>
-                  <div className="diagram-node node-left">
-                    <span className="node-icon">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        width="26"
-                        height="26"
-                      >
-                        <path d="M2 22h20M6 22V4l6-2 6 2v18" />
-                        <path d="M6 10H2v12M22 10h-4M10 6v.01M14 6v.01M10 10v.01M14 10v.01M10 14v.01M14 14v.01M10 18v.01M14 18v.01" />
-                      </svg>
-                    </span>
-                    <span className="node-label">学校</span>
-                  </div>
-                  <div className="diagram-node node-right">
-                    <span className="node-icon">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        width="26"
-                        height="26"
-                      >
-                        <path d="M3 21h18M9 21V3h6v18M9 8H5v13M19 8h-4M11 7h2M11 11h2M11 15h2" />
-                      </svg>
-                    </span>
-                    <span className="node-label">地元企業</span>
-                  </div>
-                </div>
-                <p className="diagram-caption">
-                  学校で育てた人材が地域で活躍し、再び学びに還流する循環を設計します。
-                </p>
-              </div>
-              <div className="signal-card">
-                <h4>2040年を見据えた自治体の生存戦略</h4>
-                <p>
-                  地域の担い手不足に備え、高校を「地方創生・産業振興」のエンジンへ再定義。
-                </p>
-              </div>
+              {/* 修正5 */}
+              <img src={heroImg} alt="エコシステム" className="hero-ecosystem-image" />
             </div>
           </div>
         </section>
@@ -846,14 +675,15 @@ function NextHighSchool() {
                 <div className="framework-card-top blue" />
                 <div className="framework-card-icon"><Icon.GraduationCap /></div>
                 <p className="framework-level">HIGH LEVEL</p>
-                <h3>1. 認定ティーチャー</h3>
+                {/* 修正7 */}
+                <h3>1. DXアドバイザー</h3>
                 <div className="framework-role">
                   <p>
                     <strong>主な役割：</strong>
                   </p>
                   <ul>
-                    <li>授業案作成支援</li>
-                    <li>出前授業の実施</li>
+                    <li>年間のロードマップ</li>
+                    <li>実施計画</li>
                   </ul>
                 </div>
                 <div className="framework-value">
@@ -869,14 +699,15 @@ function NextHighSchool() {
                 <div className="framework-card-top green" />
                 <div className="framework-card-icon"><Icon.Monitor /></div>
                 <p className="framework-level">MID LEVEL</p>
-                <h3>2. 認定アドバイザー</h3>
+                {/* 修正7 */}
+                <h3>2. 認定ティーチャー</h3>
                 <div className="framework-role">
                   <p>
                     <strong>主な役割：</strong>
                   </p>
                   <ul>
-                    <li>教員研修の実施</li>
-                    <li>研究授業の指導助言</li>
+                    <li>出前授業、教員研修の実施</li>
+                    <li>事業案作成授業</li>
                   </ul>
                 </div>
                 <div className="framework-value">
@@ -990,7 +821,8 @@ function NextHighSchool() {
             </div>
             <div className="split-grid">
               <div className="info-card">
-                <h3>AI-ITC支援員（人）</h3>
+                {/* 全体修正1 */}
+                <h3>AI-ICT支援員（人）</h3>
                 <ul>
                   <li>教員免許保持</li>
                   <li>授業設計支援</li>
@@ -1067,7 +899,8 @@ function NextHighSchool() {
               </p>
             </div>
             <div className="cta-actions">
-              <a className="cta-button primary" href="#materials">
+              {/* リンク修正 */}
+              <a className="cta-button primary" href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
                 お問い合わせ・資料請求
               </a>
               <p className="cta-note">オンライン相談／現状ヒアリング</p>
@@ -1084,7 +917,8 @@ function NextHighSchool() {
           </div>
           <div className="footer-links">
             <a href="#top">トップへ戻る</a>
-            <a href="#contact">無料相談</a>
+            {/* リンク修正 */}
+            <a href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">無料相談</a>
           </div>
         </div>
         <p className="footer-copy">
