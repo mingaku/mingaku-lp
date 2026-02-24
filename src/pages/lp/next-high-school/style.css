@@ -270,12 +270,15 @@
     transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
     opacity: 0.85;
   }
+
   33% {
     transform: translate3d(3%, -2%, 0) scale(1.05) rotate(1deg);
   }
+
   66% {
     transform: translate3d(-2%, 3%, 0) scale(0.98) rotate(-0.5deg);
   }
+
   100% {
     transform: translate3d(1%, 1%, 0) scale(1.03) rotate(0.5deg);
     opacity: 1;
@@ -287,6 +290,7 @@
     transform: translate(0, 0) scale(1);
     opacity: 0.6;
   }
+
   100% {
     transform: translate(-30px, 40px) scale(1.15);
     opacity: 1;
@@ -575,13 +579,27 @@
 }
 
 @keyframes orbit-pulse {
-  0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.03); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.03);
+  }
 }
 
 @keyframes orbit-spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Orbiting particles */
@@ -620,13 +638,29 @@
   transform-origin: right center;
 }
 
-.orbit-dot-1 { --orbit-r: 36%; animation-delay: 0s; }
-.orbit-dot-2 { --orbit-r: 36%; animation-delay: -3.33s; }
-.orbit-dot-3 { --orbit-r: 36%; animation-delay: -6.67s; }
+.orbit-dot-1 {
+  --orbit-r: 36%;
+  animation-delay: 0s;
+}
+
+.orbit-dot-2 {
+  --orbit-r: 36%;
+  animation-delay: -3.33s;
+}
+
+.orbit-dot-3 {
+  --orbit-r: 36%;
+  animation-delay: -6.67s;
+}
 
 @keyframes orbit-rotate {
-  0% { transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg); }
+  0% {
+    transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg);
+  }
 }
 
 /* Center hub */
@@ -718,8 +752,13 @@
 }
 
 @keyframes ring-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .diagram-center-label {
@@ -749,9 +788,12 @@
 }
 
 @keyframes center-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 40px rgba(47, 164, 169, 0.25), 0 0 80px rgba(47, 164, 169, 0.1), 0 12px 28px rgba(0, 0, 0, 0.3);
   }
+
   50% {
     box-shadow: 0 0 56px rgba(47, 164, 169, 0.35), 0 0 100px rgba(47, 164, 169, 0.15), 0 12px 28px rgba(0, 0, 0, 0.3);
   }
@@ -848,8 +890,13 @@
 }
 
 @keyframes dash-flow {
-  0% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: -20; }
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -20;
+  }
 }
 
 .diagram-caption {
@@ -959,11 +1006,11 @@
   padding-top: 16px;
 }
 
-/* 修正6：アイコンサイズの拡大 */
+/* 修正6 */
 .card-illustration {
   width: 100%;
-  max-width: 180px;
-  height: 120px;
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
@@ -1179,9 +1226,17 @@
   height: 20px;
 }
 
-.type-purpose-icon.blue { color: #2563eb; }
-.type-purpose-icon.purple { color: #9333ea; }
-.type-purpose-icon.green { color: #10b981; }
+.type-purpose-icon.blue {
+  color: #2563eb;
+}
+
+.type-purpose-icon.purple {
+  color: #9333ea;
+}
+
+.type-purpose-icon.green {
+  color: #10b981;
+}
 
 .type-purpose-label {
   font-size: 0.85rem;
@@ -1249,10 +1304,21 @@
   height: 18px;
 }
 
-.measure-icon.blue { color: #2563eb; }
-.measure-icon.cyan { color: #06b6d4; }
-.measure-icon.purple { color: #9333ea; }
-.measure-icon.gray { color: #6b7280; }
+.measure-icon.blue {
+  color: #2563eb;
+}
+
+.measure-icon.cyan {
+  color: #06b6d4;
+}
+
+.measure-icon.purple {
+  color: #9333ea;
+}
+
+.measure-icon.gray {
+  color: #6b7280;
+}
 
 .measure-label {
   font-size: 0.8rem;
@@ -1520,9 +1586,17 @@
   height: 20px;
 }
 
-.strengths-item-icon.yellow { color: #fbbf24; }
-.strengths-item-icon.blue { color: #60a5fa; }
-.strengths-item-icon.cyan { color: #67e8f9; }
+.strengths-item-icon.yellow {
+  color: #fbbf24;
+}
+
+.strengths-item-icon.blue {
+  color: #60a5fa;
+}
+
+.strengths-item-icon.cyan {
+  color: #67e8f9;
+}
 
 .strengths-item h4 {
   margin: 0;
@@ -2120,6 +2194,7 @@
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2567,11 +2642,11 @@
     font-size: 0.9rem;
   }
 
-  /* 修正6：アイコンサイズの拡大 (レスポンシブ) */
+  /* 修正6 */
   .card-illustration {
     width: 100%;
-    max-width: 180px;
-    height: 120px;
+    max-width: 100%;
+    height: auto;
   }
 
   /* Type detail */
@@ -2814,6 +2889,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

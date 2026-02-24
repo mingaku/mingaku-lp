@@ -4,9 +4,11 @@ import img001 from "./assets/001.png";
 import img002 from "./assets/002.png";
 import img003 from "./assets/003.png";
 import img004 from "./assets/004.png";
-import img005 from "./assets/005.png";
+import img005 from "./prompt/構想3.png";
 import img006 from "./assets/006.png";
 import heroImg from "./assets/hero.jpeg";
+/* 修正1 */
+import logoSvg from "./prompt/logo.svg";
 
 
 const svgProps = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, width: 20, height: 20 };
@@ -43,17 +45,22 @@ function NextHighSchool() {
     <div className="lp">
       <header className="lp-header">
         <div className="container header-inner">
-          <div className="brand">
-            <span className="brand-mark">N-E.X.T.</span>
-            <span className="brand-name">ハイスクール構想 推進パッケージ</span>
+          {/* 修正1 */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src={logoSvg} alt="logo" style={{ height: '32px', width: 'auto' }} />
+            <div className="brand">
+              <span className="brand-mark">N-E.N.T.</span>
+              <span className="brand-name">ハイスクール構想 推進パッケージ</span>
+            </div>
           </div>
           <nav className="header-nav">
             <a href="#problem">課題</a>
             <a href="#model">地域共創</a>
             <a href="#support-framework">支援内容</a>
 
-            <a className="cta-button primary" href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
-              無料相談
+            {/* 修正4 */}
+            <a className="cta-button primary" href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">
+              無料相談・資料請求
             </a>
             {/* リンク修正 */}
           </nav>
@@ -75,32 +82,36 @@ function NextHighSchool() {
                   N-E.X.T.ハイスクール 支援パッケージ
                 </span>
               </h1>
+              {/* 修正2 */}
               <p className="lead">
-                教育と採用が循環する「地域共創モデル」を戦略・人材・ツールまでワンストップで実装。
+                教育と採用が循環する「地域共創モデル」を基盤に、
                 <br />
-                自治体の教育DXを、不可逆な定着と地域活性化へつなげます。
+                教育・人材・ツールをワンストップで実装。
+                <br />
+                各自治体の地域特性に合わせた先粋教育改革で、地域活性化へつなげます。
               </p>
               <p className="tagline">導入で終わらせない、定着まで伴走。</p>
               {/* 修正3 */}
               <div className="hero-actions">
-                <a className="cta-button primary" href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
+                {/* 修正5 */}
+                <a className="cta-button primary" href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">
                   無料相談・資料請求
                 </a>
                 {/* リンク修正 */}
               </div>
               <div className="hero-meta">
-                {/* 修正4 */}
+                {/* 修正3 */}
                 <div className="meta-card">
-                  <p className="meta-label">1類</p>
-                  <p className="meta-value">地域産業と連携する実務学習</p>
+                  <p className="meta-label">類型1</p>
+                  <p className="meta-value">アドバンスト・エッセン シャルワーカー等育成支援</p>
                 </div>
                 <div className="meta-card">
-                  <p className="meta-label">2類</p>
-                  <p className="meta-value">問いを立て思考を深める理数探求</p>
+                  <p className="meta-label">類型2</p>
+                  <p className="meta-value">理数系人材育成支援</p>
                 </div>
                 <div className="meta-card">
                   <p className="meta-label">類型3</p>
-                  <p className="meta-value">誰一人取り残さない学習保障</p>
+                  <p className="meta-value">多様な学習ニーズに対応した教育機会の確保</p>
                 </div>
               </div>
             </div>
@@ -255,96 +266,12 @@ function NextHighSchool() {
           </div>
         </section>
 
-        {/* ===== 類型① エッセンシャルワーカー型-1 ===== */}
-        <section className="section type-detail" id="type-essential-1">
-          <div className="container">
-            <h2 className="type-detail-title">
-              <span className="type-detail-border" />x 類型①
-              エッセンシャルワーカー型-1
-            </h2>
-            <div className="type-detail-grid">
-              <div className="type-detail-left">
-                <div className="type-purpose-card">
-                  <div className="type-purpose-header">
-                    <span className="type-purpose-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
-                    <span className="type-purpose-label">本類型の目的</span>
-                  </div>
-                  <p className="type-purpose-text">
-                    地域産業と深く連携し、実社会で即戦力となる「
-                    <strong>高度な専門性</strong>」と「
-                    <strong>技術活用能力</strong>」をスクールAIの活用で育成
-                  </p>
-                </div>
-                <div className="type-measures">
-                  <div className="type-measure-item">
-                    <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.User /></span>
-                      <span className="measure-label">施策 01</span>
-                    </div>
-                    <h3>地元企業監修「バーチャル熟練工・専門家アプリ」</h3>
-                    <p>
-                      熟練者のノウハウをAI化し、PBLでの共同開発プロセス自体を学びに変える
-                    </p>
-                  </div>
-                  <div className="type-measure-item">
-                    <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.User /></span>
-                      <span className="measure-label">施策 02</span>
-                    </div>
-                    <h3>企業の「匠の技」を継承する個別最適トレーニング</h3>
-                    <p>
-                      24時間体制の専門指導と、業界基準の高度なフィードバック環境を提供
-                    </p>
-                  </div>
-                  <div className="type-measure-item">
-                    <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.Handshake /></span>
-                      <span className="measure-label">施策 03</span>
-                    </div>
-                    <h3>キャリア意識の醸成と地域愛着の向上</h3>
-                    <p>
-                      「地元のプロ」AIとの継続対話で、地域産業への解像度と貢献意欲を高める
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="type-detail-right">
-                <div className="data-driven-card">
-                  <div className="data-driven-header">
-                    <span className="data-driven-icon"><Icon.BarChart /></span>
-                    <h3>Data Driven</h3>
-                    <p>成果の可視化</p>
-                  </div>
-                  <div className="data-driven-divider" />
-                  <div className="data-driven-item">
-                    <span className="data-driven-item-icon"><Icon.Eye /></span>
-                    <div>
-                      <h4>ログ分析による意欲の把握</h4>
-                      <p>
-                        生徒が企業監修アプリに「どんな質問をし、何に興味を持っているか」を分析。
-                      </p>
-                    </div>
-                  </div>
-                  <div className="data-driven-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg></div>
-                  <div className="data-driven-bottom">
-                    <h4>的確な進路指導へ</h4>
-                    <p>
-                      隠れた適性や関心に基づき、マッチ度の高い地域企業への就職や進学をサポート。
-                    </p>
-                  </div>
-                  <div className="data-driven-footer">Teacher's Dashboard</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* ===== 類型① エッセンシャルワーカー型-2 ===== */}
         <section className="section type-detail" id="type-essential-2">
           <div className="container">
             <h2 className="type-detail-title">
               <span className="type-detail-border" />
-              類型① エッセンシャルワーカー型-2
+              類型① 「エッセンシャルワーカー型」
             </h2>
             <p className="type-detail-subtitle">
               3つの施策詳細と実装を支える強み
@@ -357,7 +284,7 @@ function NextHighSchool() {
                       <span className="measure-icon blue"><Icon.User /></span>
                       <span className="measure-label">施策01</span>
                     </div>
-                    <h3>バーチャル熟練工・専門家アプリの開発</h3>
+                    <h3>バーチャル熟練工・専門家テンプレートの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
                         <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
@@ -384,7 +311,7 @@ function NextHighSchool() {
                       <span className="measure-icon blue"><Icon.GraduationCap /></span>
                       <span className="measure-label">施策02</span>
                     </div>
-                    <h3>匠の技を継承する個別最適トレーニング</h3>
+                    <h3>匠の技を継承する個別最適トレーニングテンプレートの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
                         <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
@@ -411,7 +338,7 @@ function NextHighSchool() {
                       <span className="measure-icon blue"><Icon.Heart /></span>
                       <span className="measure-label">施策03</span>
                     </div>
-                    <h3>キャリア意識の醸成と地域愛着</h3>
+                    <h3>キャリア意識の醸成と地域愛着促進テンプレートの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
                         <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
@@ -434,11 +361,11 @@ function NextHighSchool() {
                   </div>
                   <div className="strengths-divider" />
                   <div className="strengths-item">
-                    <span className="strengths-item-icon yellow"><Icon.Zap /></span>
+                    <span className="strengths-item-icon yellow"><Icon.Eye /></span>
                     <div>
-                      <h4>ノーコードで迅速開発</h4>
-                      <p>
-                        プログラミング不要。企業の助言を即座にプロンプトへ反映し、技術変化の速い業界ニーズに柔軟対応。
+                      <h4 style={{ color: "white" }}>ログ分析による意欲の把握</h4>
+                      <p style={{ color: "white" }}>
+                        生徒が企業監修アプリに「どんな質問をし、何に興味を持っているか」を分析。
                       </p>
                     </div>
                   </div>
@@ -455,9 +382,9 @@ function NextHighSchool() {
                   <div className="strengths-item">
                     <span className="strengths-item-icon cyan"><Icon.TrendingUp /></span>
                     <div>
-                      <h4>確かな共同研究実績</h4>
-                      <p>
-                        「赤本AI」や多数の大学との共同研究により、産学官連携の基盤として高い信頼性を確保。
+                      <h4 style={{ color: "white" }}>的確な進路指導へ</h4>
+                      <p style={{ color: "white" }}>
+                        隠れた適性や関心に基づき、マッチ度の高い地域企業への就職や進学をサポート。
                       </p>
                     </div>
                   </div>
