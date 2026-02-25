@@ -75,22 +75,24 @@ function NextHighSchool() {
           <div className="container hero-grid">
             <div className="hero-copy">
               <h1>
-                地域を支えるDX
+                スクールAIだからできる
                 <br />
-                人材育成エコシステム
+                地域を支えるDX人材育成エコシステム
                 <span className="hero-subtitle">
                   N-E.X.T.ハイスクール 支援パッケージ
                 </span>
               </h1>
               {/* 修正2 */}
               <p className="lead">
-                教育と採用が循環する「地域共創モデル」を基盤に、
+                地域と教育の共創。生徒の振り返りと効率化 が生む「先生の余白」 を活かし、
                 <br />
-                教育・人材・ツールをワンストップで実装。
+                先生自身が想いをのせて現場に最適なアプリをサクッと自作できる
                 <br />
-                各自治体の地域特性に合わせた先粋教育改革で、地域活性化へつなげます。
+                唯一の教育プラットフォームで産業に即した教育を実装。
               </p>
-              <p className="tagline">導入で終わらせない、定着まで伴走。</p>
+              <p className="lead" style={{ marginTop: '1em' }}>
+                ICT支援員派遣や全国の先生ネットワークと連携し定着まで伴走。2040年 高度人材が循環する基盤を構築します。
+              </p>
               {/* 修正3 */}
               <div className="hero-actions">
                 {/* 修正5 */}
@@ -98,21 +100,6 @@ function NextHighSchool() {
                   無料相談・資料請求
                 </a>
                 {/* リンク修正 */}
-              </div>
-              <div className="hero-meta">
-                {/* 修正3 */}
-                <div className="meta-card">
-                  <p className="meta-label">類型1</p>
-                  <p className="meta-value">アドバンスト・エッセン シャルワーカー等育成支援</p>
-                </div>
-                <div className="meta-card">
-                  <p className="meta-label">類型2</p>
-                  <p className="meta-value">理数系人材育成支援</p>
-                </div>
-                <div className="meta-card">
-                  <p className="meta-label">類型3</p>
-                  <p className="meta-value">多様な学習ニーズに対応した教育機会の確保</p>
-                </div>
               </div>
             </div>
             <div className="hero-visual">
@@ -222,9 +209,9 @@ function NextHighSchool() {
               </div>
               <div className="policy-card accent">
                 <h3>財政的裏付け</h3>
-                <p className="big">3,009億円規模の基金活用</p>
+                <p className="big">2,955億円規模の基金活用</p>
                 <p>
-                  令和7年度補正予算の高等学校教育改革促進基金を活かし、令和9年度以降の交付金制度へ接続。
+                  令和7年度補正予算で「高等学校等教育改革促進事業」の予算を盛り込み、公募を実施している。
                 </p>
               </div>
             </div>
@@ -416,7 +403,7 @@ function NextHighSchool() {
                     <span className="type-purpose-label">本類型の目的</span>
                   </div>
                   <p className="type-purpose-text">
-                    専門教科の文脈の中でAIを活用し、文理融合の学びを支える「
+                    理数学習の文脈の中でAIを活用し、文理融合の学びを支える「
                     <strong>実践的な理数活用</strong>
                     」をスクールAI活用により促進
                   </p>
@@ -429,7 +416,7 @@ function NextHighSchool() {
                     </div>
                     <h3>理数探求に特化したAI教材の開発</h3>
                     <p>
-                      工業・商業・農業・水産など各分野に特化したアプリ群で、データ分析や技術計算学習を開始
+                      理数学習など各分野に特化したアプリ群で、データ分析や技術計算学習を開始
                     </p>
                   </div>
                   <div className="type-measure-item">
@@ -752,7 +739,7 @@ function NextHighSchool() {
                 {/* 全体修正1 */}
                 <h3>ICT支援員（人）</h3>
                 <ul>
-                  <li>教員免許保持</li>
+                  <li>AI認定資格</li>
                   <li>授業設計支援</li>
                   <li>即時トラブル対応</li>
                   <li>研修・改善まで伴走</li>

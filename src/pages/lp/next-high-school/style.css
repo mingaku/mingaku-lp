@@ -361,7 +361,8 @@
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin: 28px 0 32px;
+  margin-top: auto;
+  padding-top: 28px;
   flex-wrap: wrap;
 }
 
