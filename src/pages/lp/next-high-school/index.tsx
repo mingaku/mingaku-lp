@@ -427,9 +427,9 @@ function NextHighSchool() {
                       <span className="measure-icon cyan"><Icon.Clipboard /></span>
                       <span className="measure-label">施策 01</span>
                     </div>
-                    <h3>専門高校向けテンプレートで即実践</h3>
+                    <h3>理数探求に特化したAI教材の開発</h3>
                     <p>
-                      工業・農業など各分野に特化したアプリ群で、データ分析や技術計算学習を開始
+                      工業・商業・農業・水産など各分野に特化したアプリ群で、データ分析や技術計算学習を開始
                     </p>
                   </div>
                   <div className="type-measure-item">
@@ -437,7 +437,7 @@ function NextHighSchool() {
                       <span className="measure-icon purple"><Icon.Users /></span>
                       <span className="measure-label">施策 02</span>
                     </div>
-                    <h3>専門家ネットワークとの連携</h3>
+                    <h3>専門家ネットワークとの連携テンプレートの開発</h3>
                     <p>
                       認定アドバイザー・認定ティーチャーとの共同開発や出張授業で、高度な知見を導入
                     </p>
@@ -650,7 +650,7 @@ function NextHighSchool() {
                 <div className="framework-card-top gray" />
                 <div className="framework-card-icon"><Icon.Wrench /></div>
                 <p className="framework-level">BASE LEVEL</p>
-                <h3>3. AI-ICT支援員</h3>
+                <h3>3. AIに強いICT支援員</h3>
                 <div className="framework-role">
                   <p>
                     <strong>主な役割：</strong>
@@ -690,8 +690,8 @@ function NextHighSchool() {
                     ログデータに基づく客観的な習得証明で、地元企業の採用判断を支援。
                   </p>
                 </div>
-                <div className="mini-card">
-                  <h3>EBPMダッシュボード</h3>
+                <div className="mini-card" style={{ textAlign: "left" }}>
+                  <h3>ダッシュボード</h3>
                   <p>活用状況・成果を自治体単位で可視化し、継続改善へ。</p>
                 </div>
               </div>
@@ -744,12 +744,12 @@ function NextHighSchool() {
           <div className="container">
             <div className="section-head">
               <p className="kicker">人 × AI</p>
-              <h2>最強の伴走者：AI認定資格 × 教員免許保持者</h2>
+              <h2>AI認定資格×ICT支援員×教員免許保持者</h2>
             </div>
             <div className="split-grid">
               <div className="info-card">
                 {/* 全体修正1 */}
-                <h3>AI-ICT支援員（人）</h3>
+                <h3>ICT支援員（人）</h3>
                 <ul>
                   <li>教員免許保持</li>
                   <li>授業設計支援</li>
@@ -827,8 +827,8 @@ function NextHighSchool() {
             </div>
             <div className="cta-actions">
               {/* リンク修正 */}
-              <a className="cta-button primary" href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
-                お問い合わせ・資料請求
+              <a className="cta-button primary" href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">
+                無料相談・資料請求
               </a>
               <p className="cta-note">オンライン相談／現状ヒアリング</p>
             </div>
@@ -845,7 +845,7 @@ function NextHighSchool() {
           <div className="footer-links">
             <a href="#top">トップへ戻る</a>
             {/* リンク修正 */}
-            <a href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">無料相談</a>
+            <a href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">無料相談</a>
           </div>
         </div>
         <p className="footer-copy">
