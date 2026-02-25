@@ -10,30 +10,145 @@ import heroImg from "./assets/hero.jpeg";
 /* 修正1 */
 import logoSvg from "./prompt/logo.svg";
 
-
-const svgProps = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, width: 20, height: 20 };
+const svgProps = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.5,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  width: 20,
+  height: 20,
+};
 
 /* Reusable SVG inline icons */
 const Icon = {
-  User: () => <svg {...svgProps}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>,
-  Handshake: () => <svg {...svgProps}><path d="M11 17a1 1 0 0 1-1 1H6l-4 2V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10z" /><path d="M14 9h4a2 2 0 0 1 2 2v10l-4-2h-2" /><path d="M9 12h.01M15 12h.01" /></svg>,
-  BarChart: () => <svg {...svgProps}><path d="M3 3v18h18" /><rect x="7" y="10" width="3" height="8" rx="1" /><rect x="14" y="5" width="3" height="13" rx="1" /></svg>,
-  Eye: () => <svg {...svgProps}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>,
-  GraduationCap: () => <svg {...svgProps}><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" /></svg>,
-  Heart: () => <svg {...svgProps}><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>,
-  Rocket: () => <svg {...svgProps}><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg>,
-  Zap: () => <svg {...svgProps}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>,
-  Shield: () => <svg {...svgProps}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
-  TrendingUp: () => <svg {...svgProps}><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>,
-  Clipboard: () => <svg {...svgProps}><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><rect x="8" y="2" width="8" height="4" rx="1" ry="1" /></svg>,
-  Users: () => <svg {...svgProps}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>,
-  PlusCircle: () => <svg {...svgProps}><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>,
-  Globe: () => <svg {...svgProps}><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
-  HeartHandshake: () => <svg {...svgProps}><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" /><path d="m18 15-2-2" /><path d="m15 18-2-2" /></svg>,
-  Type: () => <svg {...svgProps}><polyline points="4 7 4 4 20 4 20 7" /><line x1="9" y1="20" x2="15" y2="20" /><line x1="12" y1="4" x2="12" y2="20" /></svg>,
-  Family: () => <svg {...svgProps}><circle cx="6" cy="5" r="2.5" /><path d="M3 13v-1a3 3 0 0 1 6 0v1" /><circle cx="18" cy="5" r="2.5" /><path d="M15 13v-1a3 3 0 0 1 6 0v1" /><circle cx="12" cy="11" r="2.5" /><path d="M9 21v-2a3 3 0 0 1 6 0v2" /></svg>,
-  Monitor: () => <svg {...svgProps}><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
-  Wrench: () => <svg {...svgProps}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>,
+  User: () => (
+    <svg {...svgProps}>
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  ),
+  Handshake: () => (
+    <svg {...svgProps}>
+      <path d="M11 17a1 1 0 0 1-1 1H6l-4 2V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v10z" />
+      <path d="M14 9h4a2 2 0 0 1 2 2v10l-4-2h-2" />
+      <path d="M9 12h.01M15 12h.01" />
+    </svg>
+  ),
+  BarChart: () => (
+    <svg {...svgProps}>
+      <path d="M3 3v18h18" />
+      <rect x="7" y="10" width="3" height="8" rx="1" />
+      <rect x="14" y="5" width="3" height="13" rx="1" />
+    </svg>
+  ),
+  Eye: () => (
+    <svg {...svgProps}>
+      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  ),
+  GraduationCap: () => (
+    <svg {...svgProps}>
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" />
+    </svg>
+  ),
+  Heart: () => (
+    <svg {...svgProps}>
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+    </svg>
+  ),
+  Rocket: () => (
+    <svg {...svgProps}>
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+      <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+    </svg>
+  ),
+  Zap: () => (
+    <svg {...svgProps}>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  ),
+  Shield: () => (
+    <svg {...svgProps}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  ),
+  TrendingUp: () => (
+    <svg {...svgProps}>
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+      <polyline points="17 6 23 6 23 12" />
+    </svg>
+  ),
+  Clipboard: () => (
+    <svg {...svgProps}>
+      <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+      <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+    </svg>
+  ),
+  Users: () => (
+    <svg {...svgProps}>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  ),
+  PlusCircle: () => (
+    <svg {...svgProps}>
+      <circle cx="12" cy="12" r="10" />
+      <line x1="12" y1="8" x2="12" y2="16" />
+      <line x1="8" y1="12" x2="16" y2="12" />
+    </svg>
+  ),
+  Globe: () => (
+    <svg {...svgProps}>
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  ),
+  HeartHandshake: () => (
+    <svg {...svgProps}>
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+      <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" />
+      <path d="m18 15-2-2" />
+      <path d="m15 18-2-2" />
+    </svg>
+  ),
+  Type: () => (
+    <svg {...svgProps}>
+      <polyline points="4 7 4 4 20 4 20 7" />
+      <line x1="9" y1="20" x2="15" y2="20" />
+      <line x1="12" y1="4" x2="12" y2="20" />
+    </svg>
+  ),
+  Family: () => (
+    <svg {...svgProps}>
+      <circle cx="6" cy="5" r="2.5" />
+      <path d="M3 13v-1a3 3 0 0 1 6 0v1" />
+      <circle cx="18" cy="5" r="2.5" />
+      <path d="M15 13v-1a3 3 0 0 1 6 0v1" />
+      <circle cx="12" cy="11" r="2.5" />
+      <path d="M9 21v-2a3 3 0 0 1 6 0v2" />
+    </svg>
+  ),
+  Monitor: () => (
+    <svg {...svgProps}>
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+      <line x1="8" y1="21" x2="16" y2="21" />
+      <line x1="12" y1="17" x2="12" y2="21" />
+    </svg>
+  ),
+  Wrench: () => (
+    <svg {...svgProps}>
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+    </svg>
+  ),
 };
 
 function NextHighSchool() {
@@ -46,11 +161,17 @@ function NextHighSchool() {
       <header className="lp-header">
         <div className="container header-inner">
           {/* 修正1 */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src={logoSvg} alt="logo" style={{ height: '32px', width: 'auto' }} />
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <img
+              src={logoSvg}
+              alt="logo"
+              style={{ height: "32px", width: "auto" }}
+            />
             <div className="brand">
-              <span className="brand-mark">N-E.N.T.</span>
-              <span className="brand-name">ハイスクール構想 支援パッケージ</span>
+              <span className="brand-mark">N-E.X.T.</span>
+              <span className="brand-name">
+                ハイスクール構想 支援パッケージ
+              </span>
             </div>
           </div>
           <nav className="header-nav">
@@ -59,7 +180,12 @@ function NextHighSchool() {
             <a href="#support-framework">支援内容</a>
 
             {/* 修正4 */}
-            <a className="cta-button primary" href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">
+            <a
+              className="cta-button primary"
+              href="https://mingaku.net/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               無料相談・資料請求
             </a>
             {/* リンク修正 */}
@@ -84,19 +210,26 @@ function NextHighSchool() {
               </h1>
               {/* 修正2 */}
               <p className="lead">
-                地域と教育の共創。生徒の振り返りと効率化 が生む「先生の余白」 を活かし、
+                地域と教育の共創。生徒の振り返りと効率化 が生む「先生の余白」
+                を活かし、
                 <br />
                 先生自身が想いをのせて現場に最適なアプリをサクッと自作できる
                 <br />
                 唯一の教育プラットフォームで産業に即した教育を実装。
               </p>
-              <p className="lead" style={{ marginTop: '1em' }}>
-                ICT支援員派遣や全国の先生ネットワークと連携し定着まで伴走。2040年 高度人材が循環する基盤を構築します。
+              <p className="lead" style={{ marginTop: "1em" }}>
+                ICT支援員派遣や全国の先生ネットワークと連携し定着まで伴走。2040年
+                高度人材が循環する基盤を構築します。
               </p>
               {/* 修正3 */}
               <div className="hero-actions">
                 {/* 修正5 */}
-                <a className="cta-button primary" href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">
+                <a
+                  className="cta-button primary"
+                  href="https://mingaku.net/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   無料相談・資料請求
                 </a>
                 {/* リンク修正 */}
@@ -104,7 +237,11 @@ function NextHighSchool() {
             </div>
             <div className="hero-visual">
               {/* 修正5 */}
-              <img src={heroImg} alt="エコシステム" className="hero-ecosystem-image" />
+              <img
+                src={heroImg}
+                alt="エコシステム"
+                className="hero-ecosystem-image"
+              />
             </div>
           </div>
         </section>
@@ -268,13 +405,28 @@ function NextHighSchool() {
                 <div className="type-measures">
                   <div className="type-measure-item has-border">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.User /></span>
+                      <span className="measure-icon blue">
+                        <Icon.User />
+                      </span>
                       <span className="measure-label">施策01</span>
                     </div>
                     <h3>バーチャル熟練工・専門家テンプレートの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
-                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
+                        <span className="check-icon">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            width="16"
+                            height="16"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
                         <div>
                           <strong>専門知のデジタル化</strong>
                           <p>
@@ -283,7 +435,20 @@ function NextHighSchool() {
                         </div>
                       </div>
                       <div className="measure-check">
-                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
+                        <span className="check-icon">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            width="16"
+                            height="16"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
                         <div>
                           <strong>実務シミュレーション＆PBL</strong>
                           <p>
@@ -295,13 +460,30 @@ function NextHighSchool() {
                   </div>
                   <div className="type-measure-item has-border">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.GraduationCap /></span>
+                      <span className="measure-icon blue">
+                        <Icon.GraduationCap />
+                      </span>
                       <span className="measure-label">施策02</span>
                     </div>
-                    <h3>匠の技を継承する個別最適トレーニングテンプレートの開発</h3>
+                    <h3>
+                      匠の技を継承する個別最適トレーニングテンプレートの開発
+                    </h3>
                     <div className="measure-checks">
                       <div className="measure-check">
-                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
+                        <span className="check-icon">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            width="16"
+                            height="16"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
                         <div>
                           <strong>24時間体制の専門指導</strong>
                           <p>
@@ -310,7 +492,20 @@ function NextHighSchool() {
                         </div>
                       </div>
                       <div className="measure-check">
-                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
+                        <span className="check-icon">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            width="16"
+                            height="16"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
                         <div>
                           <strong>高度なフィードバック</strong>
                           <p>
@@ -322,13 +517,28 @@ function NextHighSchool() {
                   </div>
                   <div className="type-measure-item has-border">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.Heart /></span>
+                      <span className="measure-icon blue">
+                        <Icon.Heart />
+                      </span>
                       <span className="measure-label">施策03</span>
                     </div>
                     <h3>キャリア意識の醸成と地域愛着促進テンプレートの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
-                        <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12" /></svg></span>
+                        <span className="check-icon">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            width="16"
+                            height="16"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
                         <div>
                           <strong>「地元のプロ」との継続的対話</strong>
                           <p>
@@ -343,21 +553,29 @@ function NextHighSchool() {
               <div className="type-detail-right">
                 <div className="strengths-card">
                   <div className="strengths-header">
-                    <span className="strengths-icon"><Icon.Rocket /></span>
+                    <span className="strengths-icon">
+                      <Icon.Rocket />
+                    </span>
                     <h3>実装に向けた強み</h3>
                   </div>
                   <div className="strengths-divider" />
                   <div className="strengths-item">
-                    <span className="strengths-item-icon yellow"><Icon.Eye /></span>
+                    <span className="strengths-item-icon yellow">
+                      <Icon.Eye />
+                    </span>
                     <div>
-                      <h4 style={{ color: "white" }}>ログ分析による意欲の把握</h4>
+                      <h4 style={{ color: "white" }}>
+                        ログ分析による意欲の把握
+                      </h4>
                       <p style={{ color: "white" }}>
                         生徒が企業監修アプリに「どんな質問をし、何に興味を持っているか」を分析。
                       </p>
                     </div>
                   </div>
                   <div className="strengths-item">
-                    <span className="strengths-item-icon blue"><Icon.Shield /></span>
+                    <span className="strengths-item-icon blue">
+                      <Icon.Shield />
+                    </span>
                     <div>
                       <h4>安全な共有環境</h4>
                       <p>
@@ -367,7 +585,9 @@ function NextHighSchool() {
                     </div>
                   </div>
                   <div className="strengths-item">
-                    <span className="strengths-item-icon cyan"><Icon.TrendingUp /></span>
+                    <span className="strengths-item-icon cyan">
+                      <Icon.TrendingUp />
+                    </span>
                     <div>
                       <h4 style={{ color: "white" }}>的確な進路指導へ</h4>
                       <p style={{ color: "white" }}>
@@ -399,7 +619,22 @@ function NextHighSchool() {
               <div className="type-detail-left">
                 <div className="type-purpose-card purple">
                   <div className="type-purpose-header">
-                    <span className="type-purpose-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
+                    <span className="type-purpose-icon purple">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        width="20"
+                        height="20"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                      </svg>
+                    </span>
                     <span className="type-purpose-label">本類型の目的</span>
                   </div>
                   <p className="type-purpose-text">
@@ -411,7 +646,9 @@ function NextHighSchool() {
                 <div className="type-measures">
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon cyan"><Icon.Clipboard /></span>
+                      <span className="measure-icon cyan">
+                        <Icon.Clipboard />
+                      </span>
                       <span className="measure-label">施策 01</span>
                     </div>
                     <h3>理数探求に特化したAI教材の開発</h3>
@@ -421,7 +658,9 @@ function NextHighSchool() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon purple"><Icon.Users /></span>
+                      <span className="measure-icon purple">
+                        <Icon.Users />
+                      </span>
                       <span className="measure-label">施策 02</span>
                     </div>
                     <h3>専門家ネットワークとの連携テンプレートの開発</h3>
@@ -431,7 +670,9 @@ function NextHighSchool() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon gray"><Icon.PlusCircle /></span>
+                      <span className="measure-icon gray">
+                        <Icon.PlusCircle />
+                      </span>
                       <span className="measure-label">施策 03</span>
                     </div>
                     <h3>「自律的・探究的」な研究活動の実現</h3>
@@ -444,7 +685,9 @@ function NextHighSchool() {
               <div className="type-detail-right">
                 <div className="visualization-card">
                   <div className="visualization-header">
-                    <span className="visualization-icon"><Icon.BarChart /></span>
+                    <span className="visualization-icon">
+                      <Icon.BarChart />
+                    </span>
                     <div>
                       <h3>Visualization</h3>
                       <p>思考の可視化と接続</p>
@@ -452,7 +695,9 @@ function NextHighSchool() {
                   </div>
                   <div className="visualization-divider" />
                   <div className="visualization-item">
-                    <span className="visualization-item-icon"><Icon.Globe /></span>
+                    <span className="visualization-item-icon">
+                      <Icon.Globe />
+                    </span>
                     <div>
                       <h4>思考プロセスの客観把握</h4>
                       <p>
@@ -460,7 +705,21 @@ function NextHighSchool() {
                       </p>
                     </div>
                   </div>
-                  <div className="visualization-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg></div>
+                  <div className="visualization-arrow">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      width="20"
+                      height="20"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="19 12 12 19 5 12" />
+                    </svg>
+                  </div>
                   <div className="visualization-bottom">
                     <h4>大学教育（高等教育）への接続</h4>
                     <p>
@@ -486,7 +745,22 @@ function NextHighSchool() {
               <div className="type-detail-left">
                 <div className="type-purpose-card green">
                   <div className="type-purpose-header">
-                    <span className="type-purpose-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg></span>
+                    <span className="type-purpose-icon green">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        width="20"
+                        height="20"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                      </svg>
+                    </span>
                     <span className="type-purpose-label">本類型の目的</span>
                   </div>
                   <p className="type-purpose-text">
@@ -498,18 +772,24 @@ function NextHighSchool() {
                 <div className="type-measures">
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.HeartHandshake /></span>
+                      <span className="measure-icon blue">
+                        <Icon.HeartHandshake />
+                      </span>
                       <span className="measure-label">施策 01</span>
                     </div>
                     {/* 修正4 */}
-                    <h3>24時間「個」に寄り添うオンライン自習室と学習パートナー</h3>
+                    <h3>
+                      24時間「個」に寄り添うオンライン自習室と学習パートナー
+                    </h3>
                     <p>
                       不登校傾向や学び直しが必要な生徒へ、心理的安全性の高い学びの場を提供
                     </p>
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.Type /></span>
+                      <span className="measure-icon blue">
+                        <Icon.Type />
+                      </span>
                       <span className="measure-label">施策 02</span>
                     </div>
                     <h3>多様な習熟度・言語背景への対応</h3>
@@ -519,7 +799,9 @@ function NextHighSchool() {
                   </div>
                   <div className="type-measure-item">
                     <div className="type-measure-header">
-                      <span className="measure-icon blue"><Icon.Family /></span>
+                      <span className="measure-icon blue">
+                        <Icon.Family />
+                      </span>
                       <span className="measure-label">施策 03</span>
                     </div>
                     <h3>保護者・家庭との連携サポート</h3>
@@ -532,7 +814,9 @@ function NextHighSchool() {
               <div className="type-detail-right">
                 <div className="monitoring-card">
                   <div className="monitoring-header">
-                    <span className="monitoring-icon"><Icon.Shield /></span>
+                    <span className="monitoring-icon">
+                      <Icon.Shield />
+                    </span>
                     <div>
                       <h3>Monitoring &amp; Care</h3>
                       <p>見守りの強化</p>
@@ -540,7 +824,9 @@ function NextHighSchool() {
                   </div>
                   <div className="monitoring-divider" />
                   <div className="monitoring-item">
-                    <span className="monitoring-item-icon"><Icon.Eye /></span>
+                    <span className="monitoring-item-icon">
+                      <Icon.Eye />
+                    </span>
                     <div>
                       <h4>会話ログによる予兆検知</h4>
                       <p>
@@ -548,7 +834,21 @@ function NextHighSchool() {
                       </p>
                     </div>
                   </div>
-                  <div className="monitoring-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20"><line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" /></svg></div>
+                  <div className="monitoring-arrow">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      width="20"
+                      height="20"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <polyline points="19 12 12 19 5 12" />
+                    </svg>
+                  </div>
                   <div className="monitoring-bottom">
                     <h4>プロセス評価の高度化</h4>
                     <p>
@@ -588,7 +888,9 @@ function NextHighSchool() {
             <div className="framework-grid">
               <div className="framework-card">
                 <div className="framework-card-top blue" />
-                <div className="framework-card-icon"><Icon.GraduationCap /></div>
+                <div className="framework-card-icon">
+                  <Icon.GraduationCap />
+                </div>
                 <p className="framework-level">HIGH LEVEL</p>
                 {/* 修正7 */}
                 <h3>1. DXアドバイザー</h3>
@@ -612,7 +914,9 @@ function NextHighSchool() {
               </div>
               <div className="framework-card">
                 <div className="framework-card-top green" />
-                <div className="framework-card-icon"><Icon.Monitor /></div>
+                <div className="framework-card-icon">
+                  <Icon.Monitor />
+                </div>
                 <p className="framework-level">MID LEVEL</p>
                 {/* 修正7 */}
                 <h3>2. 認定ティーチャー</h3>
@@ -636,7 +940,9 @@ function NextHighSchool() {
               </div>
               <div className="framework-card">
                 <div className="framework-card-top gray" />
-                <div className="framework-card-icon"><Icon.Wrench /></div>
+                <div className="framework-card-icon">
+                  <Icon.Wrench />
+                </div>
                 <p className="framework-level">BASE LEVEL</p>
                 <h3>3. AIに強いICT支援員</h3>
                 <div className="framework-role">
@@ -800,8 +1106,6 @@ function NextHighSchool() {
           </div>
         </section>
 
-
-
         {/* ===== CTAセクション ===== */}
         <section className="section cta" id="contact">
           <div className="container cta-inner">
@@ -815,7 +1119,12 @@ function NextHighSchool() {
             </div>
             <div className="cta-actions">
               {/* リンク修正 */}
-              <a className="cta-button primary" href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">
+              <a
+                className="cta-button primary"
+                href="https://mingaku.net/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 無料相談・資料請求
               </a>
               <p className="cta-note">オンライン相談／現状ヒアリング</p>
