@@ -50,7 +50,7 @@ function NextHighSchool() {
             <img src={logoSvg} alt="logo" style={{ height: '32px', width: 'auto' }} />
             <div className="brand">
               <span className="brand-mark">N-E.N.T.</span>
-              <span className="brand-name">ハイスクール構想 推進パッケージ</span>
+              <span className="brand-name">ハイスクール構想 支援パッケージ</span>
             </div>
           </div>
           <nav className="header-nav">
@@ -480,7 +480,7 @@ function NextHighSchool() {
                       大学レベルの研究手法やシミュレーターを活用し、高大接続をスムーズに実現。
                     </p>
                   </div>
-                  <div className="visualization-footer">Research Support</div>
+                  {/* 修正2: Research Support 削除 */}
                 </div>
               </div>
             </div>
@@ -514,7 +514,8 @@ function NextHighSchool() {
                       <span className="measure-icon blue"><Icon.HeartHandshake /></span>
                       <span className="measure-label">施策 01</span>
                     </div>
-                    <h3>24時間「個」に寄り添う学習パートナー</h3>
+                    {/* 修正4 */}
+                    <h3>24時間「個」に寄り添うオンライン自習室と学習パートナー</h3>
                     <p>
                       不登校傾向や学び直しが必要な生徒へ、心理的安全性の高い学びの場を提供
                     </p>
@@ -844,8 +845,7 @@ function NextHighSchool() {
           </div>
           <div className="footer-links">
             <a href="#top">トップへ戻る</a>
-            {/* リンク修正 */}
-            <a href="https://mingaku.net/contact" target="_blank" rel="noopener noreferrer">無料相談</a>
+            {/* 修正3: 無料相談テキスト＆リンク削除 */}
           </div>
         </div>
         <p className="footer-copy">
