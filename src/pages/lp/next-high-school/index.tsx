@@ -162,11 +162,13 @@ function NextHighSchool() {
         <div className="container header-inner">
           {/* 修正1 */}
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <img
-              src={logoSvg}
-              alt="logo"
-              style={{ height: "32px", width: "auto" }}
-            />
+            <a href="https://school-ai.mingaku.net/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={logoSvg}
+                alt="logo"
+                style={{ height: "32px", width: "auto" }}
+              />
+            </a>
             <div className="brand">
               <span className="brand-mark">N-E.X.T.</span>
               <span className="brand-name">
