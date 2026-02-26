@@ -217,7 +217,7 @@ function NextHighSchool() {
                 <br />
                 先生自身が想いをのせて現場に最適なアプリをサクッと自作できる
                 <br />
-                唯一の教育プラットフォームで産業に即した教育を実装。
+                唯一の教育プラットフォームで地域特性・産業に即した教育を実装。
               </p>
               <p className="lead" style={{ marginTop: "1em" }}>
                 ICT支援員派遣や全国の先生ネットワークと連携し定着まで伴走。2040年
@@ -412,7 +412,7 @@ function NextHighSchool() {
                       </span>
                       <span className="measure-label">施策01</span>
                     </div>
-                    <h3>バーチャル熟練工・専門家テンプレートの開発</h3>
+                    <h3>専門高校（商業・工業・農業）などに特化した専門テンプレートの開発</h3>
                     <div className="measure-checks">
                       <div className="measure-check">
                         <span className="check-icon">
@@ -857,15 +857,12 @@ function NextHighSchool() {
                       感情・頻度分析により、数値化しにくい「主体的・対話的で深い学び」のプロセスを可視化。
                     </p>
                   </div>
-                  <div className="monitoring-footer">
-                    <span>Teacher's Dashboard</span>
-                    <span>05</span>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
 
         {/* ===== 思考を深化させる5つの専門AIアプリ ===== */}
         <section className="section ai-apps" id="ai-apps">
@@ -876,6 +873,22 @@ function NextHighSchool() {
             </h2>
             <div className="ai-apps-image">
               <img src={img006} alt="5つの専門AIアプリ" />
+            </div>
+
+            <div style={{ textAlign: "center", marginTop: "40px" }}>
+              <a
+                href="https://school-ai.mingaku.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
+                  color: "#10b981",
+                  fontWeight: "bold",
+                  textDecoration: "underline"
+                }}
+              >
+                「スクールAI」とは？
+              </a>
             </div>
           </div>
         </section>
@@ -1150,7 +1163,7 @@ function NextHighSchool() {
           &copy; 2026 みんがく. All rights reserved.
         </p>
       </footer>
-    </div>
+    </div >
   );
 }
 
