@@ -236,6 +236,18 @@ function NextHighSchool() {
                 </a>
                 {/* リンク修正 */}
               </div>
+
+              <div className="hero-pr-section">
+                <p className="hero-pr-title">プレスリリース掲載実績</p>
+                <a
+                  href="https://prtimes.jp/main/html/rd/p/000000168.000079497.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-pr-link"
+                >
+                  2026.02.27：N-E.X.T.ハイスクール支援パッケージを始動しました
+                </a>
+              </div>
             </div>
             <div className="hero-visual">
               {/* 修正5 */}
@@ -1085,6 +1097,9 @@ function NextHighSchool() {
                 <p>補助金終了後も自走可能な運営体制を確立。</p>
               </div>
             </div>
+            <p style={{ color: "#10b981", fontSize: "0.9rem", marginTop: "16px", fontWeight: "bold" }}>
+              ※人材派遣については、豊富な実績を持つグループ会社の株式会社サクシードとの連携により提供致します。(派遣元株式会社サクシード)
+            </p>
           </div>
         </section>
 
@@ -1153,6 +1168,18 @@ function NextHighSchool() {
           <div>
             <h3>N-E.X.T.ハイスクール 支援パッケージ</h3>
             <p>自治体教育DXの不可逆な定着と官民共創による地域活性化へ。</p>
+
+            <div className="footer-mext-section">
+              <p className="footer-mext-title">対応事業</p>
+              <a
+                href="https://www.mext.go.jp/b_menu/boshu/detail/mext_00510.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-mext-link"
+              >
+                令和7年度 産業イノベーション人材育成等に資する高等学校等教育改革促進事業
+              </a>
+            </div>
           </div>
           <div className="footer-links">
             <a href="#top">トップへ戻る</a>

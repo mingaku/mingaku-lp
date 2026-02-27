@@ -184,7 +184,8 @@
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  padding: 122px 0 90px;
+  padding: 80px 0 60px;
+  /* Reduced from 122px 0 90px to fit PR section in first view */
   overflow: hidden;
   isolation: isolate;
   background: #060d18;
@@ -406,6 +407,59 @@
 .cta-button.ghost:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.35);
+}
+
+.hero-pr-section {
+  margin-top: 24px;
+  padding: 16px 24px;
+  border: 2px solid var(--color-primary);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: fit-content;
+}
+
+.hero-pr-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+a.hero-pr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+a.hero-pr-link:hover {
+  opacity: 0.85;
+  transform: translateX(4px);
+}
+
+a.hero-pr-link::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232FA4A9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.2s ease;
+}
+
+a.hero-pr-link:hover::after {
+  transform: translateX(3px);
 }
 
 .hero-meta {
@@ -2187,6 +2241,54 @@
 
 .footer-links a:hover {
   color: var(--color-secondary);
+}
+
+.footer-mext-section {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-mext-title {
+  font-size: 0.85rem !important;
+  font-weight: 700;
+  color: var(--color-secondary) !important;
+  margin: 0 !important;
+}
+
+a.footer-mext-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+  max-width: fit-content;
+}
+
+a.footer-mext-link:hover {
+  opacity: 0.85;
+  transform: translateX(4px);
+}
+
+a.footer-mext-link::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232FA4A9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 0.2s ease;
+}
+
+a.footer-mext-link:hover::after {
+  transform: translateX(3px);
 }
 
 /* ===== Entrance Motion ===== */
