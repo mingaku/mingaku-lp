@@ -1223,11 +1223,11 @@ a.hero-pr-link:hover::after {
 }
 
 .type-detail-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
+  font-family: 'Source Serif 4', 'Noto Sans JP', serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
   font-weight: 700;
   color: var(--color-primary);
-  margin: -8px 0 28px;
+  margin: 0 0 24px;
 }
 
 .type-detail-grid {
@@ -2771,8 +2771,9 @@ a.footer-mext-link:hover::after {
   }
 
   .type-detail-subtitle {
-    font-size: 1rem;
-    margin: -4px 0 20px;
+    font-family: 'Source Serif 4', 'Noto Sans JP', serif;
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+    margin: 0 0 20px;
   }
 
   .type-purpose-card {

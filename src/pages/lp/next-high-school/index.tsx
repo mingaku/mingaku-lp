@@ -4,7 +4,7 @@ import img001 from "./assets/001.png";
 import img002 from "./assets/002.png";
 import img003 from "./assets/003.png";
 import img004 from "./assets/004.png";
-import img005 from "./prompt/構想3.png";
+import img005 from "./assets/005.png";
 import img006 from "./assets/006.png";
 import heroImg from "./assets/hero.jpeg";
 /* 修正1 */
@@ -170,7 +170,7 @@ function NextHighSchool() {
               />
             </a>
             <div className="brand">
-              <span className="brand-mark">N-E.X.T.</span>
+              <span className="brand-mark">N-E.X.T.（ネクスト）</span>
               <span className="brand-name">
                 ハイスクール構想 支援パッケージ
               </span>
@@ -407,13 +407,13 @@ function NextHighSchool() {
         {/* ===== 類型① エッセンシャルワーカー型-2 ===== */}
         <section className="section type-detail" id="type-essential-2">
           <div className="container">
+            <p className="type-detail-subtitle">
+              3つの施策詳細と実装を支える強み
+            </p>
             <h2 className="type-detail-title">
               <span className="type-detail-border" />
               類型① 「エッセンシャルワーカー型」
             </h2>
-            <p className="type-detail-subtitle">
-              3つの施策詳細と実装を支える強み
-            </p>
             <div className="type-detail-grid">
               <div className="type-detail-left">
                 <div className="type-measures">
@@ -1166,7 +1166,7 @@ function NextHighSchool() {
       <footer className="lp-footer" id="materials">
         <div className="container footer-inner">
           <div>
-            <h3>N-E.X.T.ハイスクール 支援パッケージ</h3>
+            <h3>N-E.X.T.（ネクスト）ハイスクール 支援パッケージ</h3>
             <p>自治体教育DXの不可逆な定着と官民共創による地域活性化へ。</p>
 
             <div className="footer-mext-section">
