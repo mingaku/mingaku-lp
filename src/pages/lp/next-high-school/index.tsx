@@ -1097,7 +1097,7 @@ function NextHighSchool() {
                 <p>補助金終了後も自走可能な運営体制を確立。</p>
               </div>
             </div>
-            <p style={{ color: "#10b981", fontSize: "0.9rem", marginTop: "16px", fontWeight: "bold" }}>
+            <p className="callout-note">
               ※人材派遣については、豊富な実績を持つグループ会社の株式会社サクシードとの連携により提供致します。(派遣元株式会社サクシード)
             </p>
           </div>

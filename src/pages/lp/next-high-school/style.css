@@ -1165,6 +1165,14 @@ a.hero-pr-link:hover::after {
   color: var(--color-primary);
 }
 
+.callout-note {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  margin-top: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 /* ===== Types (3つの類型) ===== */
 .types {
   background: linear-gradient(180deg, #ffffff, #f8fbff);
